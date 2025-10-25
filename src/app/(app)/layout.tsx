@@ -6,19 +6,18 @@ import { MusicPlayer } from '@/components/music-player';
 import { Sidebar, SidebarProvider, SidebarHeader, SidebarTrigger } from '@/components/ui/sidebar';
 import { MusicProvider } from '@/contexts/music-provider';
 import { Heart, Menu } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 import { FloatingHearts } from '@/components/floating-hearts';
 import { ClickHearts } from '@/components/click-hearts';
+import { RomanticPopup } from '@/components/romantic-popup';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
   return (
     <MusicProvider>
       <div className="relative min-h-screen w-full">
         <BackgroundSparkles />
         <FloatingHearts />
         <ClickHearts />
+        <RomanticPopup />
         <SidebarProvider>
           <div className="md:flex">
             <Sidebar className="z-20">
@@ -34,19 +33,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <MainNav />
             </Sidebar>
             <main className="flex-1 relative">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={pathname}
-                    initial={{ filter: 'blur(4px)', opacity: 0 }}
-                    animate={{ filter: 'blur(0px)', opacity: 1 }}
-                    exit={{ filter: 'blur(4px)', opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  >
-                    <div className="p-4 md:p-8">
-                      {children}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+                <div className="p-4 md:p-8">
+                  {children}
+                </div>
             </main>
           </div>
         </SidebarProvider>

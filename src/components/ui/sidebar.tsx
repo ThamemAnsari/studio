@@ -63,7 +63,7 @@ export const Sidebar = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLEl
       <aside
         ref={ref}
         className={cn(
-          'relative hidden h-screen flex-col border-r bg-background transition-all duration-300 ease-in-out md:flex',
+          'relative hidden h-screen flex-col border-r bg-background transition-none md:flex sidebar',
           isCollapsed ? 'w-16' : 'w-64',
           className
         )}
@@ -174,31 +174,8 @@ export const SidebarMenuButton = React.forwardRef<HTMLAnchorElement, SidebarMenu
     const { isCollapsed, isMobile, setIsOpen } = useSidebar();
     const Comp = asChild ? Slot : Link;
 
-    const createRipple = (event: React.MouseEvent<HTMLElement>) => {
-      const button = event.currentTarget;
-  
-      const circle = document.createElement("span");
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
-      const radius = diameter / 2;
-  
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
-      circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
-      circle.classList.add("ripple");
-  
-      const ripple = button.getElementsByClassName("ripple")[0];
-  
-      if (ripple) {
-        ripple.remove();
-      }
-  
-      button.appendChild(circle);
-    };
-
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (isMobile) setIsOpen(false);
-      // @ts-ignore
-      createRipple(e);
       if (props.onClick) props.onClick(e);
     };
 
@@ -207,8 +184,9 @@ export const SidebarMenuButton = React.forwardRef<HTMLAnchorElement, SidebarMenu
         data-slot="sidebar-button"
         data-active={isActive}
         className={cn(
-          buttonVariants({ variant: isActive ? 'secondary' : 'ghost', size: 'default' }),
-          'w-full justify-start',
+          buttonVariants({ variant: 'ghost', size: 'default' }),
+          'w-full justify-start transition-colors duration-200 hover:bg-[#E3F2FD] hover:text-accent-foreground',
+          isActive && 'bg-[#4A90E2] text-white hover:bg-[#4A90E2]/90',
           isCollapsed && !isMobile ? 'h-10 w-10 justify-center p-0' : '',
           className
         )}

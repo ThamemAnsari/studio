@@ -12,7 +12,6 @@ export type FormState = {
   message: string;
   sentiment?: string;
   fields?: Record<string, string>;
-  issues?: string[];
 };
 
 export async function generateNoteAction(
@@ -23,10 +22,8 @@ export async function generateNoteAction(
   const parsed = formSchema.safeParse(formData);
 
   if (!parsed.success) {
-    const issues = parsed.error.issues.map((issue) => issue.message);
     return {
       message: 'Invalid form data.',
-      issues,
     };
   }
 

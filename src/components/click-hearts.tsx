@@ -17,10 +17,16 @@ export function ClickHearts() {
   let heartCounter = 0;
 
   const createHeartBurst = useCallback((e: MouseEvent) => {
+    // Check if the click was on a button or link
+    const target = e.target as HTMLElement;
+    if (target.closest('button') || target.closest('a')) {
+      return;
+    }
+
     const newHearts: Heart[] = [];
-    for (let i = 0; i < 6; i++) {
-      const angle = (i / 6) * 2 * Math.PI;
-      const distance = 50 + Math.random() * 30;
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * 2 * Math.PI;
+      const distance = 60 + Math.random() * 40;
       newHearts.push({
         id: heartCounter++,
         x: e.clientX,
@@ -35,7 +41,7 @@ export function ClickHearts() {
 
     setTimeout(() => {
       setHearts(prev => prev.slice(newHearts.length));
-    }, 1000);
+    }, 1200);
   }, [heartCounter]);
 
   useEffect(() => {
