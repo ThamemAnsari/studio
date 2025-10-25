@@ -1,3 +1,60 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "first-date",
+      "description": "Our first date, full of nervous laughter and endless conversation.",
+      "imageUrl": "https://images.unsplash.com/photo-1593926365536-b1fda191c28a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBjYWZlfGVufDB8fHx8MTc2MTI5NDM0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple cafe",
+      "date": "2020-02-14"
+    },
+    {
+      "id": "first-kiss",
+      "description": "The moment the world stood still. Our first kiss under the stars.",
+      "imageUrl": "https://images.unsplash.com/photo-1704371233665-74998a7f9534?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBzdGFyc3xlbnwwfHx8fDE3NjEzNzk5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple stars",
+      "date": "2020-04-01"
+    },
+    {
+      "id": "beach-trip",
+      "description": "Unforgettable trip to the coast. Salty air and sweet nothings.",
+      "imageUrl": "https://images.unsplash.com/photo-1581700501514-95e559cff7e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBiZWFjaHxlbnwwfHx8fDE3NjEzNzk5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple beach",
+      "date": "2021-07-20"
+    },
+    {
+      "id": "engagement",
+      "description": "The easiest 'Yes'. The beginning of forever.",
+      "imageUrl": "https://images.unsplash.com/photo-1636392281492-8b5aff7f75f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3VwbGUlMjBlbmdhZ2VtZW50fGVufDB8fHx8MTc2MTMxMjU0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple engagement",
+      "date": "2022-12-25"
+    },
+    {
+      "id": "mountain-hike",
+      "description": "Conquering mountains together, literally and figuratively.",
+      "imageUrl": "https://images.unsplash.com/photo-1601614064799-7667efadb7ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjBoaWtpbmd8ZW58MHx8fHwxNzYxMjYwMDQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple hiking",
+      "date": "2022-08-15"
+    },
+    {
+      "id": "city-lights",
+      "description": "Exploring the city that never sleeps, hand in hand.",
+      "imageUrl": "https://images.unsplash.com/photo-1699463701384-d7f8f49efdcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3VwbGUlMjBjaXR5fGVufDB8fHx8MTc2MTMxNjMxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple city",
+      "date": "2021-11-05"
+    },
+    {
+      "id": "cozy-evening",
+      "description": "A quiet evening in, our favorite kind of adventure.",
+      "imageUrl": "https://images.unsplash.com/photo-1612991236323-36f92c861cba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb3VwbGUlMjBob21lfGVufDB8fHx8MTc2MTM3OTkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple home",
+      "date": "2023-01-20"
+    },
+    {
+      "id": "wedding-day",
+      "description": "Two souls, one heart. The best day of our lives.",
+      "imageUrl": "https://images.unsplash.com/photo-1519175182139-86e3bc09d7fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VwbGUlMjB3ZWRkaW5nfGVufDB8fHx8MTc2MTM3OTkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple wedding",
+      "date": "2023-10-07"
+    }
+  ]
 }
