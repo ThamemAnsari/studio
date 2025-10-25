@@ -19,7 +19,7 @@ import type { ImagePlaceholder } from '@/lib/placeholder-images';
 
 export default function PhotoAlbumPage() {
   return (
-    <div className="container mx-auto animate-fade-in-up">
+    <div className="container mx-auto">
       <div className="text-center mb-8">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-accent">
           Our Photo Album
@@ -39,7 +39,7 @@ export default function PhotoAlbumPage() {
           {photoAlbumData.map((photo: ImagePlaceholder) => (
             <CarouselItem key={photo.id}>
               <div className="p-1">
-                <Card className="glass-card overflow-hidden">
+                <Card className="glass-card overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   <CardContent className="p-0">
                     <div className="aspect-video relative">
                       <Image

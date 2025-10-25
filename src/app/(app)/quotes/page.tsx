@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 export default function QuotesPage() {
   const [favorites, setFavorites] = useState<number[]>([]);
@@ -30,14 +31,14 @@ export default function QuotesPage() {
   if (!isClient) return null;
 
   return (
-    <div className="container mx-auto animate-fade-in-up">
+    <div className="container mx-auto">
       <div className="text-center mb-8">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-accent">Words of Love</h1>
         <p className="mt-2 text-lg text-foreground/80">Quotes that remind us of our story.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {quotesData.map((quote) => (
-          <Card key={quote.id} className="glass-card flex flex-col justify-between">
+          <Card key={quote.id} className="glass-card flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <CardContent className="p-6">
               <blockquote className="space-y-4">
                 <p className="font-headline text-xl text-foreground">&quot;{quote.text}&quot;</p>
@@ -51,10 +52,15 @@ export default function QuotesPage() {
                 onClick={() => toggleFavorite(quote.id)}
                 aria-label={favorites.includes(quote.id) ? 'Unfavorite' : 'Favorite'}
               >
-                <Heart className={cn(
-                  "w-6 h-6 text-primary transition-all",
-                  favorites.includes(quote.id) ? 'fill-current' : 'fill-transparent'
-                )} />
+                <motion.div
+                  whileTap={{ scale: 0.8 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                >
+                  <Heart className={cn(
+                    "w-6 h-6 text-primary transition-all",
+                    favorites.includes(quote.id) ? 'fill-current' : 'fill-transparent'
+                  )} />
+                </motion.div>
               </Button>
             </div>
           </Card>

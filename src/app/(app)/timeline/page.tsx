@@ -7,7 +7,7 @@ import { Pin } from 'lucide-react';
 
 export default function TimelinePage() {
   return (
-    <div className="container mx-auto animate-fade-in-up">
+    <div className="container mx-auto">
       <div className="text-center mb-12">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-accent">Our Love Story</h1>
         <p className="mt-2 text-lg text-foreground/80">The journey that brought us here.</p>
@@ -24,7 +24,7 @@ export default function TimelinePage() {
               <Pin className="w-4 h-4" />
             </div>
             <div className="w-full md:w-5/12">
-              <Card className="glass-card">
+              <Card className="glass-card transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 {item.image && (
                   <CardContent className="p-0">
                     <div className="aspect-video relative rounded-t-lg overflow-hidden">
