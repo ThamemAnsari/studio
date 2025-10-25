@@ -14,7 +14,6 @@ import {
   Image as ImageIcon,
   Calendar,
   Quote,
-  Music,
   BotMessageSquare,
   PanelLeft,
 } from 'lucide-react';
@@ -53,7 +52,7 @@ export function MainNav() {
                   <item.icon />
                   <span className={cn(isCollapsed && !isMobile && 'hidden')}>{item.label}</span>
                 </a>
-              </SiderbarMenuButton>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
