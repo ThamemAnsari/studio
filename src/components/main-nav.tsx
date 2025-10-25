@@ -34,9 +34,9 @@ export function MainNav() {
   return (
     <>
       <div className="hidden md:flex items-center justify-between p-2">
-         <SidebarTrigger>
-            <PanelLeft />
-          </SidebarTrigger>
+        <SidebarTrigger>
+          <PanelLeft />
+        </SidebarTrigger>
       </div>
       <SidebarContent>
         <SidebarMenu>
@@ -44,14 +44,14 @@ export function MainNav() {
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton
                 href={item.href}
-                asChild
                 isActive={pathname === item.href}
                 tooltip={{ children: item.label }}
+                className="transition-all duration-300 ease-in-out hover:scale-105 hover:translate-x-1"
               >
-                <a href={item.href}>
-                  <item.icon />
-                  <span className={cn(isCollapsed && !isMobile && 'hidden')}>{item.label}</span>
-                </a>
+                <item.icon className="h-5 w-5 transition-transform duration-300" />
+                <span className={cn(isCollapsed && !isMobile && 'hidden')}>
+                  {item.label}
+                </span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
