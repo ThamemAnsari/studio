@@ -174,7 +174,7 @@ export const SidebarMenuButton = React.forwardRef<HTMLAnchorElement, SidebarMenu
     const { isCollapsed, isMobile, setIsOpen } = useSidebar();
     const Comp = asChild ? Slot : Link;
 
-    const createRipple = (event: React.MouseEvent<HTMLSpanElement>) => {
+    const createRipple = (event: React.MouseEvent<HTMLElement>) => {
       const button = event.currentTarget;
   
       const circle = document.createElement("span");
@@ -202,20 +202,24 @@ export const SidebarMenuButton = React.forwardRef<HTMLAnchorElement, SidebarMenu
       if (props.onClick) props.onClick(e);
     };
 
+    const buttonContent = (
+      <span
+        data-slot="sidebar-button"
+        data-active={isActive}
+        className={cn(
+          buttonVariants({ variant: isActive ? 'secondary' : 'ghost', size: 'default' }),
+          'w-full justify-start',
+          isCollapsed && !isMobile ? 'h-10 w-10 justify-center p-0' : '',
+          className
+        )}
+      >
+        {children}
+      </span>
+    );
+    
     const button = (
       <Comp href={href} ref={ref} onClick={handleClick} {...props}>
-        <span
-          data-slot="sidebar-button"
-          data-active={isActive}
-          className={cn(
-            buttonVariants({ variant: isActive ? 'secondary' : 'ghost', size: 'default' }),
-            'w-full justify-start',
-            isCollapsed && !isMobile ? 'h-10 w-10 justify-center p-0' : '',
-            className
-          )}
-        >
-          {children}
-        </span>
+        {buttonContent}
       </Comp>
     );
 
